@@ -1,0 +1,70 @@
+---
+title: "DataFrames 1"
+output:
+  html_document: default
+  pdf_document: 
+    keep_tex: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Los primeros pasos
+Con "data()" Podremos ver los distintos datasets cargados en R. 
+Con "data(package=.packages(all.available = TRUE))" podremos ver todos los
+datasets a nuestra dispocision, los cuales podemos descargar.
+```{r}
+data() 
+
+data(package=.packages(all.available = TRUE))
+```
+
+##Trabajando con iris
+```{r}
+df= iris
+#df nos mostraria toda la tabla completa, le ponemos el numeral para anularlo
+
+```
+
+Podemos remover la variable creada con "remove"
+```{r}
+remove(df)
+```
+Pero para seguir trabajando volveremos a añadir el dataframe.
+Head nos proporciona los 5 primeros elementos y tail nos muestra los 5 ultimos,
+Esto solo si los dejamos predeterminados, ya que si queremos podemos hacer que 
+solo muestren el numero de elementos que queramos. Names nos da el nombre de 
+las variables dentro del dataframe. Str nos brinda la informacion mas importante.
+```{r}
+df= iris
+head(df,3)
+tail(df)
+names(df)
+str(df)
+```
+## Extraer informacion del dataframe
+- `rownames(d.f)`: para producir un vector con los identificadores de las filas
+    - R entiende siempre que estos identificadores son palabras, aunque sean números, de ahí que los imprima entre comillas
+- `colnames(d.f)`: para producir un vector con los identificadores de las columnas
+- `dimnames(d.f)`: para producir una list formada por dos vectores (el de los identificadores de las filas y el de los nombres de las columnas)
+- `nrow(d.f)`: para consultar el número de filas de un data frame
+- `ncol(d.f)`: para consultar el número de columnas de un data frame
+- `dim(d.f)`: para producir un vector con el número de filas y el de columnas
+
+```{r}
+rownames(df)
+colnames(df)
+dimnames(df)
+nrow(df)
+ncol(df)
+dim(df)
+```
+
+Con el simbolo del dolar podemos especificar una variable del dataframe
+
+
+
+
+
+
